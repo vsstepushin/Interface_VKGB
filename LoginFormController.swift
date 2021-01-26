@@ -8,6 +8,10 @@
 import UIKit
 
 class LoginFormController: UIViewController {
+    
+    @IBAction func exitVK(segue: UIStoryboardSegue) {
+                
+            }
 
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField!

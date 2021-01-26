@@ -88,7 +88,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="opz-Z5-KtB"/>
                     <connections>
-                        <outlet property="loginButton" destination="XG1-iq-y0Q" id="ond-hT-obt"/>
                         <outlet property="loginInput" destination="0Yc-UI-V7o" id="SMA-gh-LXa"/>
                         <outlet property="passwordInput" destination="P4B-Ib-un1" id="Ti4-ly-3Oa"/>
                         <outlet property="vkUIScrollView" destination="Bqd-VI-cM6" id="94H-UW-b3N"/>
@@ -136,7 +135,7 @@
                     <navigationItem key="navigationItem" id="BpO-ey-qy8">
                         <barButtonItem key="leftBarButtonItem" image="VKBack" id="PaA-Gl-MIq">
                             <connections>
-                                <segue destination="AxF-3I-6V8" kind="unwind" unwindAction="exitVKWithSegue:" id="du3-ea-92z"/>
+                                <segue destination="AxF-3I-6V8" kind="unwind" unwindAction="exitVKWithSegue:" id="pvi-v0-3Dw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
