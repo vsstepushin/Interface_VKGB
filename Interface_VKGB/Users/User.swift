@@ -66,8 +66,8 @@ let dkProf = userProfile(userId: "3", userName: "Даня", userSurname: "Кра
                                       UIImage(named: "DK.3.3"),
                                       UIImage(named: "DK.3.4")])
 let ltProf = userProfile(userId: "4", userName: "Лихой", userSurname: "Топор", userAvatar: UIImage(named: "LT.4.Avatar"),
-                         userPhotos: [UIImage(named: "LK.4.1"),
-                                      UIImage(named: "LK.4.2")])
+                         userPhotos: [UIImage(named: "LT.4.1"),
+                                      UIImage(named: "LT.4.2")])
 let dmProf = userProfile(userId: "5", userName: "Дмитрий", userSurname: "Масленников", userAvatar: UIImage(named: "DM.5.Avatar"),
                          userPhotos: [UIImage(named: "DM.5.1"),
                                       UIImage(named: "DM.5.2"),
