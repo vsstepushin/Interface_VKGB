@@ -16,19 +16,45 @@ class LoginFormController: UIViewController {
     @IBOutlet var loginInput: UITextField!
     @IBOutlet var passwordInput: UITextField!
     @IBOutlet var vkUIScrollView: UIScrollView!
-    @IBAction func loginButton(_ sender: Any) {
-        
-        //получаем логин
-        let logInVK = loginInput.text!
-        //получаем пароль
-        let passwordVK = passwordInput.text!
-        //проверяем на верность
-        if logInVK == "1" && passwordVK == "1" {
-            print("Ok")
-        } else {
-            print("Bad")
+    
+    @IBAction func myUnwindingAction(unwindSegue: UIStoryboardSegue) {}
+        override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+            guard checkingUser() else {
+                shownAlert()
+                return false
+            }
+            return true
         }
         
+        internal func checkingUser() -> Bool {
+            guard
+                 //получаем логин
+            let logInVK = loginInput.text,
+            //получаем пароль
+            let passwordVK = passwordInput.text
+            //проверяем на верность
+            else { return false }
+            return logInVK == "1" && passwordVK == "1"
+        }
+        
+        private func shownAlert() {
+            let alertController = UIAlertController(
+                title: "Ошибка",
+                message: "Неверный логин или пароль!",
+                preferredStyle: .alert)
+            let alertItem = UIAlertAction(
+                title: "Ok:(",
+                style: .cancel)
+            { _ in
+                self.loginInput.text = ""
+                self.passwordInput.text = ""
+            }
+            alertController.addAction(alertItem)
+            present(alertController,
+                    animated: true,
+                    completion: nil)
+        }
+    @IBAction func loginButton(_ sender: Any) {
         
     }
     
@@ -83,14 +109,5 @@ class LoginFormController: UIViewController {
     @objc func hideKeyboard() {
         self.vkUIScrollView?.endEditing(true)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

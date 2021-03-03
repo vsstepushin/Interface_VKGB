@@ -13,7 +13,7 @@ class AllDroupsTVController: UITableViewController {
         super.viewDidLoad()
     }
 
-    // MARK: - Table view data source
+
     @IBAction func addGroups (segue: UIStoryboardSegue) {
         guard
             segue.identifier == "addGroups",
