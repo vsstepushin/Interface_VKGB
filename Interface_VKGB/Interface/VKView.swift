@@ -93,6 +93,6 @@ extension ShadowView {
             super.awakeFromNib()
             layer.cornerRadius = 10
             layer.borderWidth = 3
-            layer.borderColor = UIColor.blue.cgColor
+            layer.borderColor = UIColor.gray.cgColor
         }
 }

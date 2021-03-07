@@ -25,6 +25,10 @@
 		F47F77DB25B9DCF7009DD267 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77DA25B9DCF6009DD267 /* User.swift */; };
 		F48FB99E25C570CE0029DAD9 /* UserFotoCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FB99D25C570CE0029DAD9 /* UserFotoCVController.swift */; };
 		F48FB9A125C570EA0029DAD9 /* UserFotoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FB9A025C570EA0029DAD9 /* UserFotoCVCell.swift */; };
+		F4CE177625F2C47D00032C41 /* NewsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177525F2C47D00032C41 /* NewsTVController.swift */; };
+		F4CE177A25F2C4BC00032C41 /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177925F2C4BC00032C41 /* NewsTVCell.swift */; };
+		F4CE177D25F2CEE900032C41 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177C25F2CEE900032C41 /* News.swift */; };
+		F4CE178025F2DE3C00032C41 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177F25F2DE3C00032C41 /* DateTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		F47F77DA25B9DCF6009DD267 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F48FB99D25C570CE0029DAD9 /* UserFotoCVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFotoCVController.swift; sourceTree = "<group>"; };
 		F48FB9A025C570EA0029DAD9 /* UserFotoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFotoCVCell.swift; sourceTree = "<group>"; };
+		F4CE177525F2C47D00032C41 /* NewsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVController.swift; sourceTree = "<group>"; };
+		F4CE177925F2C4BC00032C41 /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
+		F4CE177C25F2CEE900032C41 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		F4CE177F25F2DE3C00032C41 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		F47F77BC25B0C9ED009DD267 /* Interface_VKGB */ = {
 			isa = PBXGroup;
 			children = (
+				F4CE177425F2C44700032C41 /* News */,
 				F426645A25C863C000DFD1E1 /* Interface */,
 				F43C9AD625C315B700F22D11 /* Groups */,
 				F47F77D925B9DCC2009DD267 /* Users */,
@@ -127,6 +136,7 @@
 				F47F77CB25B0C9F2009DD267 /* Info.plist */,
 				F47F77D225B731AC009DD267 /* LoginFormController.swift */,
 				F47F77D625B9D13D009DD267 /* StubDevelopment.storyboard */,
+				F4CE177F25F2DE3C00032C41 /* DateTime.swift */,
 			);
 			path = Interface_VKGB;
 			sourceTree = "<group>";
@@ -149,6 +159,16 @@
 				F48FB9A025C570EA0029DAD9 /* UserFotoCVCell.swift */,
 			);
 			path = UserFoto;
+			sourceTree = "<group>";
+		};
+		F4CE177425F2C44700032C41 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				F4CE177525F2C47D00032C41 /* NewsTVController.swift */,
+				F4CE177925F2C4BC00032C41 /* NewsTVCell.swift */,
+				F4CE177C25F2CEE900032C41 /* News.swift */,
+			);
+			path = News;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +244,7 @@
 			files = (
 				F48FB99E25C570CE0029DAD9 /* UserFotoCVController.swift in Sources */,
 				F426645C25C8640B00DFD1E1 /* VKView.swift in Sources */,
+				F4CE177A25F2C4BC00032C41 /* NewsTVCell.swift in Sources */,
 				F47F77C225B0C9ED009DD267 /* ViewController.swift in Sources */,
 				F43C9AE825C3234600F22D11 /* GroupsTVController.swift in Sources */,
 				F43C9ADE25C31A7F00F22D11 /* AllGroupsTVCell.swift in Sources */,
@@ -235,6 +256,9 @@
 				F47F77C025B0C9ED009DD267 /* SceneDelegate.swift in Sources */,
 				F43C9ADB25C31A5A00F22D11 /* AllDroupsTVController.swift in Sources */,
 				F43C9AD425C1DC6100F22D11 /* AllFriendTVController.swift in Sources */,
+				F4CE177625F2C47D00032C41 /* NewsTVController.swift in Sources */,
+				F4CE177D25F2CEE900032C41 /* News.swift in Sources */,
+				F4CE178025F2DE3C00032C41 /* DateTime.swift in Sources */,
 				F43C9AD825C315FE00F22D11 /* Groups.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
