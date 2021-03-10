@@ -13,7 +13,7 @@ class UserFotoCVController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(String(describing: UserF?.userName)) \(String(describing: UserF?.userSurname))"
+        title = "\(String(describing: UserF!.userName)) \(String(describing: UserF!.userSurname))"
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int  { 1 }

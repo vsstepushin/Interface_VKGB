@@ -9,6 +9,10 @@ import UIKit
 
 class UserFotoCVCell: UICollectionViewCell {
     
+    @IBAction func pulsateLikeButton(_ sender: UIButton) {
+        sender.pulsateLike()
+    }
+    
     @IBOutlet weak var userFoto: UIImageView!
     @IBOutlet var controllLike: UIButton!
     @IBOutlet var sumLike: UILabel!

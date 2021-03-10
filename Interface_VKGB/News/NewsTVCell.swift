@@ -19,6 +19,9 @@ class NewsTVCell: UITableViewCell {
     @IBOutlet weak var likeContentNews: UILabel!
     @IBOutlet weak var viewsContentNews: UILabel!
     
+    @IBAction func pulsateLikeButtonNews(_ sender: UIButton) {
+        sender.pulsateLike()
+    }
     @IBAction func likeNews(_ sender: Any) {
         likeContentButtonNews.isSelected.toggle()
         likeContentNews.text = likeContentButtonNews.isSelected ? "1" : "0"

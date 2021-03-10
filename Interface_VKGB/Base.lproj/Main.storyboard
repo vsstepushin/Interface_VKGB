@@ -47,6 +47,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XG1-iq-y0Q">
                                         <rect key="frame" x="132" y="559" width="150" height="30"/>
                                         <color key="backgroundColor" red="0.19261196259999999" green="0.49637687209999998" blue="0.59358304740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="arc-KZ-jyh"/>
+                                            <constraint firstAttribute="height" constant="30" id="sqW-oZ-YDb"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.19261196259999999" green="0.49637687209999998" blue="0.59358304740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,21 +60,31 @@
                                             <segue destination="SQP-fK-CBo" kind="presentation" identifier="myUnwindingAction" modalPresentationStyle="fullScreen" id="zJ4-cB-vzP"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjM-Vq-jJ4" customClass="IndicatorLoadingView" customModule="Interface_VKGB" customModuleProvider="target">
+                                        <rect key="frame" x="87" y="608" width="240" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="g9R-Gp-rds"/>
+                                            <constraint firstAttribute="height" constant="22" id="n8c-eS-Spf"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="XG1-iq-y0Q" firstAttribute="leading" secondItem="MS3-56-xU7" secondAttribute="leading" constant="132" id="2Od-Wt-fSd"/>
+                                    <constraint firstItem="sjM-Vq-jJ4" firstAttribute="top" secondItem="XG1-iq-y0Q" secondAttribute="bottom" constant="19" id="CuC-o2-3yM"/>
                                     <constraint firstItem="P4B-Ib-un1" firstAttribute="top" secondItem="0Yc-UI-V7o" secondAttribute="bottom" constant="31" id="LKt-FS-x5H"/>
                                     <constraint firstItem="P4B-Ib-un1" firstAttribute="centerX" secondItem="Bqd-VI-cM6" secondAttribute="centerX" id="M4y-XL-cJs"/>
                                     <constraint firstItem="XG1-iq-y0Q" firstAttribute="centerX" secondItem="P4B-Ib-un1" secondAttribute="centerX" id="PhD-sN-mBT"/>
                                     <constraint firstAttribute="bottom" secondItem="P4B-Ib-un1" secondAttribute="bottom" constant="318" id="UVX-ad-BFg"/>
+                                    <constraint firstAttribute="bottom" secondItem="sjM-Vq-jJ4" secondAttribute="bottom" constant="222" id="VsT-w3-8JT"/>
                                     <constraint firstItem="XG1-iq-y0Q" firstAttribute="top" secondItem="P4B-Ib-un1" secondAttribute="bottom" constant="25" id="X6E-ow-Kmn"/>
                                     <constraint firstItem="psG-l7-FKw" firstAttribute="bottom" secondItem="P4B-Ib-un1" secondAttribute="bottom" constant="-123" id="ZhE-1Z-Vcu"/>
                                     <constraint firstItem="0Yc-UI-V7o" firstAttribute="leading" secondItem="P4B-Ib-un1" secondAttribute="leading" id="aXB-ej-Oi3"/>
                                     <constraint firstItem="P4B-Ib-un1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Yc-UI-V7o" secondAttribute="leading" id="dwN-qZ-AGo"/>
+                                    <constraint firstItem="sjM-Vq-jJ4" firstAttribute="centerX" secondItem="Bqd-VI-cM6" secondAttribute="centerX" id="g5M-vD-aOg"/>
                                     <constraint firstItem="psG-l7-FKw" firstAttribute="leading" secondItem="Bqd-VI-cM6" secondAttribute="leadingMargin" id="g5g-6D-iW9"/>
                                     <constraint firstItem="P4B-Ib-un1" firstAttribute="top" secondItem="Bqd-VI-cM6" secondAttribute="top" constant="500" id="hXC-Ty-KfX"/>
                                     <constraint firstAttribute="trailing" secondItem="0Yc-UI-V7o" secondAttribute="trailing" constant="82" id="iSR-HT-O5g"/>
                                     <constraint firstItem="psG-l7-FKw" firstAttribute="centerX" secondItem="P4B-Ib-un1" secondAttribute="centerX" id="k0b-Pq-9qk"/>
+                                    <constraint firstItem="XG1-iq-y0Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bqd-VI-cM6" secondAttribute="leading" constant="132" id="mIe-33-hgF"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P4B-Ib-un1" secondAttribute="trailing" id="wxY-Pw-5nO"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="M0p-Te-tuZ"/>
@@ -95,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="-1372"/>
+            <point key="canvasLocation" x="-97.101449275362327" y="-1372.0982142857142"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="rjT-1o-kMs">
@@ -143,14 +157,24 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="_clipsToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2s-Ct-3wL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <connections>
+                                                        <action selector="avatarAnimate:" destination="uN9-xX-KhD" eventType="touchUpInside" id="hyJ-BI-CYo"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="A2s-Ct-3wL" firstAttribute="bottom" secondItem="vuR-P9-yDd" secondAttribute="bottom" id="KpT-aa-sIb"/>
                                                 <constraint firstItem="vuR-P9-yDd" firstAttribute="leading" secondItem="PEh-cx-Hcp" secondAttribute="leading" id="M4q-VU-KGC"/>
+                                                <constraint firstItem="A2s-Ct-3wL" firstAttribute="top" secondItem="vuR-P9-yDd" secondAttribute="top" id="PqS-bY-aaK"/>
+                                                <constraint firstItem="A2s-Ct-3wL" firstAttribute="leading" secondItem="vuR-P9-yDd" secondAttribute="leading" id="R8t-fx-Kco"/>
                                                 <constraint firstItem="vuR-P9-yDd" firstAttribute="top" secondItem="PEh-cx-Hcp" secondAttribute="top" id="gPt-DA-41W"/>
                                                 <constraint firstAttribute="width" constant="80" id="oJJ-CX-S4M"/>
                                                 <constraint firstAttribute="bottom" secondItem="vuR-P9-yDd" secondAttribute="bottom" id="rAr-Ba-ZFZ"/>
                                                 <constraint firstAttribute="height" constant="80" id="vaz-KI-FzH"/>
+                                                <constraint firstItem="A2s-Ct-3wL" firstAttribute="trailing" secondItem="vuR-P9-yDd" secondAttribute="trailing" id="wBC-JY-9Ny"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -188,6 +212,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                                 <connections>
+                                    <outlet property="shadowView" destination="PEh-cx-Hcp" id="cLn-OY-GrX"/>
                                     <outlet property="userAvatar" destination="vuR-P9-yDd" id="me1-k8-llY"/>
                                     <outlet property="userName" destination="szF-nU-B2D" id="ikC-8f-ueB"/>
                                     <segue destination="rP1-Z5-aPm" kind="show" identifier="showUserPhoto" id="Y1y-2m-0Xe"/>
@@ -206,6 +231,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBarFriend" destination="XZN-Bo-GhF" id="pmy-Ud-r3C"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xj5-U2-YYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="EvL-eZ-ohX" userLabel="Exit" sceneMemberID="exit"/>
@@ -291,6 +319,7 @@
                                                     <state key="normal" image="heartVKOff"/>
                                                     <connections>
                                                         <action selector="likeNews:" destination="nhR-2d-xkl" eventType="touchUpInside" id="OO6-3J-7dy"/>
+                                                        <action selector="pulsateLikeButtonNews:" destination="nhR-2d-xkl" eventType="touchUpInside" id="0Bg-yK-sXq"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59s-BJ-hp6">
@@ -437,6 +466,7 @@
                                                     <state key="normal" image="heartVKOff"/>
                                                     <connections>
                                                         <action selector="likeRun:" destination="013-hZ-VN6" eventType="touchUpInside" id="9Z6-uJ-Ew3"/>
+                                                        <action selector="pulsateLikeButton:" destination="013-hZ-VN6" eventType="touchUpInside" id="kOV-mP-iGM"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yj-pw-I54">
@@ -513,6 +543,13 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhK-nC-OW4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="avatarAnimateGroup:" destination="YGQ-NA-az3" eventType="touchUpInside" id="g45-Hu-EEy"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -551,6 +588,7 @@
                                 <connections>
                                     <outlet property="groupAvatar" destination="fMu-M6-Ehg" id="rhO-1r-xCP"/>
                                     <outlet property="groupName" destination="mCB-4n-uDe" id="fe6-yE-syg"/>
+                                    <outlet property="shadowViewAllGroup" destination="Pun-7f-dPb" id="gpZ-Mz-ObO"/>
                                     <segue destination="Lnk-YD-Nat" kind="unwind" identifier="addGroups" unwindAction="addGroupsWithSegue:" id="4o2-dM-Fgd"/>
                                 </connections>
                             </tableViewCell>
@@ -687,6 +725,13 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAW-ts-Npe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="avatarAnimateGroup:" destination="gfK-2Q-BYf" eventType="touchUpInside" id="Qyc-ii-WWG"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -725,6 +770,7 @@
                                 <connections>
                                     <outlet property="groupAvatar" destination="PYe-n0-lbU" id="u67-Qs-cLt"/>
                                     <outlet property="groupName" destination="0qu-qY-2yc" id="ZhS-sV-Wzt"/>
+                                    <outlet property="shadowViewAllGroup" destination="0dG-Q4-mZu" id="4x8-jg-0ro"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

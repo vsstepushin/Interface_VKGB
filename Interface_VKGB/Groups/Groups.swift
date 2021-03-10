@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct groups {
+struct Groups {
     var groupName: String
     var groupAvatar: UIImage?
     
@@ -18,20 +18,20 @@ struct groups {
     
 }
 
-extension groups: Equatable {
-    static func == (lhs: groups, rhs: groups) -> Bool {
+extension Groups: Equatable {
+    static func == (lhs: Groups, rhs: Groups) -> Bool {
         lhs.groupName == rhs.groupName && lhs.groupAvatar == rhs.groupAvatar
     }
 }
-var allGroups: [groups] = [
-    groups(groupName: "Skype", groupAvatar: "SkypeAva"),
-    groups(groupName: "Discord", groupAvatar: "DiscordAva"),
-    groups(groupName: "GB", groupAvatar: "GBAva"),
-    groups(groupName: "Instagramm", groupAvatar: "InstaAva"),
-    groups(groupName: "Telegramm", groupAvatar: "telegAvatar"),
-    groups(groupName: "Viber", groupAvatar: "ViberAva"),
-    groups(groupName: "Zoom", groupAvatar: "ZoomAva")]
+var allGroups: [Groups] = [
+    Groups(groupName: "Skype", groupAvatar: "SkypeAva"),
+    Groups(groupName: "Discord", groupAvatar: "DiscordAva"),
+    Groups(groupName: "GB", groupAvatar: "GBAva"),
+    Groups(groupName: "Instagramm", groupAvatar: "InstaAva"),
+    Groups(groupName: "Telegramm", groupAvatar: "telegAvatar"),
+    Groups(groupName: "Viber", groupAvatar: "ViberAva"),
+    Groups(groupName: "Zoom", groupAvatar: "ZoomAva")]
 
-var myGroup: [groups] = [
-    groups(groupName: "Discord", groupAvatar: "DiscordAva"),
-    groups(groupName: "GB", groupAvatar: "GBAva")]
+var myGroup: [Groups] = [
+    Groups(groupName: "Discord", groupAvatar: "DiscordAva"),
+    Groups(groupName: "GB", groupAvatar: "GBAva")]

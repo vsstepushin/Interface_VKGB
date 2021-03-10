@@ -12,7 +12,10 @@ class AllGroupsTVCell: UITableViewCell {
     
     @IBOutlet weak var groupAvatar: UIImageView!
     @IBOutlet weak var groupName: UILabel!
-    
+    @IBOutlet weak var shadowViewAllGroup: ShadowView!
+    @IBAction func avatarAnimateGroup(_ sender: UIImageView) {
+        shadowViewAllGroup.avatarAnimate()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

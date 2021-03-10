@@ -20,6 +20,9 @@ class AllFriendTVController: UITableViewController, UISearchBarDelegate {
     var sectionFriend = [FriendSection]()
     var searchingFriend = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableAnimate()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +77,7 @@ class AllFriendTVController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
         let headerVievFriend = UIView()
         let lableFriend = UILabel()
         headerVievFriend.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
@@ -87,26 +91,30 @@ class AllFriendTVController: UITableViewController, UISearchBarDelegate {
             lableFriend.leadingAnchor.constraint(equalTo: headerVievFriend.leadingAnchor, constant: 16),
             lableFriend.trailingAnchor.constraint(equalTo: headerVievFriend.trailingAnchor, constant: -16)])
         return headerVievFriend
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showUserPhoto" {
             let albumUser = segue.destination as? UserFotoCVController
             if let indexPath = tableView.indexPathForSelectedRow {
-                let UserFotos = allFriend[indexPath.row]
-                albumUser?.UserF = UserFotos
+                if searchingFriend {
+                    albumUser?.UserF = filterFriend[indexPath.row]
+                } else {
+                    albumUser?.UserF = sectionFriend[indexPath.section].itemsSection[indexPath.row]
+                }
             }
         }
     }
-//    func searchBarFriend(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//            filteredFriends = friends.filter({$0.name.lowercased().prefix(searchText.count) == searchText.lowercased()})
-//            searching = true
-//            tableView.reloadData()
-//        }
-//        
-//        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//            searching = false
-//            searchBar.text = ""
-//            tableView.reloadData()
-//        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterFriend = allFriend.filter({$0.userName.lowercased().prefix(searchText.count) == searchText.lowercased()})
+            searchingFriend = true
+            tableView.reloadData()
+        }
+
+        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchingFriend = false
+            searchBar.text = ""
+            tableView.reloadData()
+        }
 }

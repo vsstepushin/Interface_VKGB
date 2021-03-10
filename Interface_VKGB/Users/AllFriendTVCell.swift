@@ -12,6 +12,10 @@ class AllFriendTVCell: UITableViewCell {
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userAvatar: UIImageView!
+    @IBOutlet weak var shadowView: ShadowView!
+    @IBAction func avatarAnimate(_ sender: UIImageView) {
+        shadowView.avatarAnimate()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
