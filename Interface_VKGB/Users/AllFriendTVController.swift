@@ -99,9 +99,9 @@ class AllFriendTVController: UITableViewController, UISearchBarDelegate {
             let albumUser = segue.destination as? UserFotoCVController
             if let indexPath = tableView.indexPathForSelectedRow {
                 if searchingFriend {
-                    albumUser?.UserF = filterFriend[indexPath.row]
+                    albumUser?.userF = filterFriend[indexPath.row]
                 } else {
-                    albumUser?.UserF = sectionFriend[indexPath.section].itemsSection[indexPath.row]
+                    albumUser?.userF = sectionFriend[indexPath.section].itemsSection[indexPath.row]
                 }
             }
         }

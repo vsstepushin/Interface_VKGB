@@ -493,6 +493,7 @@
                                     <outlet property="controllLike" destination="Kl4-fC-NSw" id="GPQ-EO-x4V"/>
                                     <outlet property="sumLike" destination="5yj-pw-I54" id="BH3-ds-eRN"/>
                                     <outlet property="userFoto" destination="ytE-rR-2ni" id="e7a-PB-3ON"/>
+                                    <segue destination="aZn-UA-WoX" kind="show" identifier="showAllUserPhoto" id="Tsd-dW-XNh"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -506,6 +507,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCh-vJ-DrN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-723.1884057971015" y="1488.6160714285713"/>
+        </scene>
+        <!--All Foto View Controller-->
+        <scene sceneID="OHb-gJ-LCH">
+            <objects>
+                <viewController id="aZn-UA-WoX" customClass="AllFotoViewController" customModule="Interface_VKGB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e4b-YT-lev">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VP.1.1" translatesAutoresizingMaskIntoConstraints="NO" id="qup-eH-c2l">
+                                <rect key="frame" x="0.0" y="188" width="414" height="520"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VP.1.2" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-Qv-K1m">
+                                <rect key="frame" x="0.0" y="188" width="414" height="525"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mfI-qk-5DQ"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <constraints>
+                            <constraint firstItem="7xB-Qv-K1m" firstAttribute="centerX" secondItem="e4b-YT-lev" secondAttribute="centerX" id="2Ok-yX-eP4"/>
+                            <constraint firstItem="7xB-Qv-K1m" firstAttribute="leading" secondItem="mfI-qk-5DQ" secondAttribute="leading" id="6sj-KW-XQz"/>
+                            <constraint firstItem="7xB-Qv-K1m" firstAttribute="trailing" secondItem="mfI-qk-5DQ" secondAttribute="trailing" id="A9D-fD-ksA"/>
+                            <constraint firstItem="qup-eH-c2l" firstAttribute="top" secondItem="7xB-Qv-K1m" secondAttribute="top" id="ACS-Y5-GjP"/>
+                            <constraint firstItem="qup-eH-c2l" firstAttribute="centerY" secondItem="e4b-YT-lev" secondAttribute="centerY" id="EYz-0q-jNQ"/>
+                            <constraint firstItem="7xB-Qv-K1m" firstAttribute="top" secondItem="mfI-qk-5DQ" secondAttribute="top" constant="100" id="F9J-QQ-wsg"/>
+                            <constraint firstItem="qup-eH-c2l" firstAttribute="centerX" secondItem="e4b-YT-lev" secondAttribute="centerX" id="Uan-R5-ar7"/>
+                            <constraint firstItem="mfI-qk-5DQ" firstAttribute="bottom" secondItem="7xB-Qv-K1m" secondAttribute="bottom" constant="100" id="WAr-fv-jkP"/>
+                            <constraint firstItem="qup-eH-c2l" firstAttribute="leading" secondItem="mfI-qk-5DQ" secondAttribute="leading" id="qga-dg-asN"/>
+                            <constraint firstItem="mfI-qk-5DQ" firstAttribute="trailing" secondItem="qup-eH-c2l" secondAttribute="trailing" id="rGL-1o-998"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CO4-aO-pcV"/>
+                    <connections>
+                        <outlet property="firstImageView" destination="7xB-Qv-K1m" id="8Uc-5g-tTB"/>
+                        <outlet property="nextImageView" destination="qup-eH-c2l" id="Rhw-80-fGx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pb7-Pf-XHe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-723" y="2172"/>
         </scene>
         <!--Все группы-->
         <scene sceneID="w7P-KN-FR3">
@@ -947,6 +990,8 @@
         <image name="VKMessenger" width="50" height="50"/>
         <image name="VKNews" width="50" height="50"/>
         <image name="VKProfil" width="50" height="50"/>
+        <image name="VP.1.1" width="660" height="440"/>
+        <image name="VP.1.2" width="640" height="427"/>
         <image name="comm" width="22" height="21"/>
         <image name="eye" width="38" height="22"/>
         <image name="heartVKOff" width="36" height="22"/>
