@@ -527,6 +527,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mfI-qk-5DQ"/>
                         <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="7xB-Qv-K1m" firstAttribute="centerX" secondItem="e4b-YT-lev" secondAttribute="centerX" id="2Ok-yX-eP4"/>
                             <constraint firstItem="7xB-Qv-K1m" firstAttribute="leading" secondItem="mfI-qk-5DQ" secondAttribute="leading" id="6sj-KW-XQz"/>
@@ -651,7 +652,7 @@
         <!--Друзья-->
         <scene sceneID="8it-dA-XoY">
             <objects>
-                <navigationController id="5q3-4h-yQ0" sceneMemberID="viewController">
+                <navigationController id="5q3-4h-yQ0" customClass="AllNavigationVController" customModule="Interface_VKGB" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="VKFriends" id="X1y-Fd-278">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="10"/>
                     </tabBarItem>
@@ -671,7 +672,7 @@
         <!--Новости-->
         <scene sceneID="ElD-Qy-kCU">
             <objects>
-                <navigationController id="na5-M1-j2K" sceneMemberID="viewController">
+                <navigationController id="na5-M1-j2K" customClass="AllNavigationVController" customModule="Interface_VKGB" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Новости" image="VKNews" springLoaded="YES" id="20X-gh-ibT">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="10"/>
                     </tabBarItem>
@@ -843,7 +844,7 @@
         <!--Группы-->
         <scene sceneID="n18-AW-kVN">
             <objects>
-                <navigationController id="RZx-Cp-xN4" sceneMemberID="viewController">
+                <navigationController id="RZx-Cp-xN4" customClass="AllNavigationVController" customModule="Interface_VKGB" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="VKGroup" id="WXp-1g-59e">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="10"/>
                     </tabBarItem>
