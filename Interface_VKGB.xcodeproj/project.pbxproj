@@ -16,6 +16,7 @@
 		F43C9ADE25C31A7F00F22D11 /* AllGroupsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9ADD25C31A7F00F22D11 /* AllGroupsTVCell.swift */; };
 		F43C9AE825C3234600F22D11 /* GroupsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9AE725C3234600F22D11 /* GroupsTVController.swift */; };
 		F4602DEB25FD3DF800EAB312 /* AllFotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */; };
+		F4675C7526060EAC007A4831 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4675C7426060EAC007A4831 /* Session.swift */; };
 		F47F77BE25B0C9ED009DD267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77BD25B0C9ED009DD267 /* AppDelegate.swift */; };
 		F47F77C025B0C9ED009DD267 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77BF25B0C9ED009DD267 /* SceneDelegate.swift */; };
 		F47F77C225B0C9ED009DD267 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77C125B0C9ED009DD267 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		F43C9ADD25C31A7F00F22D11 /* AllGroupsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTVCell.swift; sourceTree = "<group>"; };
 		F43C9AE725C3234600F22D11 /* GroupsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTVController.swift; sourceTree = "<group>"; };
 		F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFotoViewController.swift; sourceTree = "<group>"; };
+		F4675C7426060EAC007A4831 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F47F77BA25B0C9ED009DD267 /* Interface_VKGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interface_VKGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47F77BD25B0C9ED009DD267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47F77BF25B0C9ED009DD267 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			path = AllGroups;
 			sourceTree = "<group>";
 		};
+		F4675C7326060E82007A4831 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4675C7426060EAC007A4831 /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F47F77B125B0C9ED009DD267 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 		F47F77BC25B0C9ED009DD267 /* Interface_VKGB */ = {
 			isa = PBXGroup;
 			children = (
+				F4675C7326060E82007A4831 /* Models */,
 				F4CE178325F7EF3700032C41 /* Animation */,
 				F4CE177425F2C44700032C41 /* News */,
 				F426645A25C863C000DFD1E1 /* Interface */,
@@ -281,6 +292,7 @@
 				F4CE177625F2C47D00032C41 /* NewsTVController.swift in Sources */,
 				F4CE177D25F2CEE900032C41 /* News.swift in Sources */,
 				F4602DEB25FD3DF800EAB312 /* AllFotoViewController.swift in Sources */,
+				F4675C7526060EAC007A4831 /* Session.swift in Sources */,
 				F4CE178025F2DE3C00032C41 /* DateTime.swift in Sources */,
 				F4CE178825F7FAB400032C41 /* AllAnimations.swift in Sources */,
 				F43C9AD825C315FE00F22D11 /* Groups.swift in Sources */,
