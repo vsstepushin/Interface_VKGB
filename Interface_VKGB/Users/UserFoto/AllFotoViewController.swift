@@ -11,6 +11,7 @@ enum PanGestureDirection {
     case unknown
     case left
     case right
+    case down
 }
 
 class AllFotoViewController: UIViewController {
@@ -54,7 +55,7 @@ class AllFotoViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         configureViewController()
     }
-
+    
     private func configureViewController() {
         currentPhotoImageView = firstImageView
         nextPhotoImageView = nextImageView
