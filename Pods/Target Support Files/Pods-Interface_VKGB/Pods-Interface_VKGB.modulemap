@@ -1,0 +1,6 @@
+framework module Pods_Interface_VKGB {
+  umbrella header "Pods-Interface_VKGB-umbrella.h"
+
+  export *
+  module * { export * }
+}
