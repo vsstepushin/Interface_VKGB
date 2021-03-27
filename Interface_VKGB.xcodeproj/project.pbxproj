@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61AFE3175B6743A106486E0E /* Pods_Interface_VKGB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564652B190C37474CD66683D /* Pods_Interface_VKGB.framework */; };
 		F41DC2C626024F1F00B85C86 /* AllNavigationVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41DC2C526024F1F00B85C86 /* AllNavigationVController.swift */; };
 		F426645C25C8640B00DFD1E1 /* VKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426645B25C8640B00DFD1E1 /* VKView.swift */; };
 		F43C9AD125C1D5AC00F22D11 /* AllFriendTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9AD025C1D5AC00F22D11 /* AllFriendTVCell.swift */; };
@@ -15,6 +16,7 @@
 		F43C9ADB25C31A5A00F22D11 /* AllDroupsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9ADA25C31A5A00F22D11 /* AllDroupsTVController.swift */; };
 		F43C9ADE25C31A7F00F22D11 /* AllGroupsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9ADD25C31A7F00F22D11 /* AllGroupsTVCell.swift */; };
 		F43C9AE825C3234600F22D11 /* GroupsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9AE725C3234600F22D11 /* GroupsTVController.swift */; };
+		F4558211260F68CC00F683DD /* VKRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4558210260F68CC00F683DD /* VKRequests.swift */; };
 		F4602DEB25FD3DF800EAB312 /* AllFotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */; };
 		F4675C7526060EAC007A4831 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4675C7426060EAC007A4831 /* Session.swift */; };
 		F47F77BE25B0C9ED009DD267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77BD25B0C9ED009DD267 /* AppDelegate.swift */; };
@@ -37,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0018E6AC02C4375BB2233837 /* Pods-Interface_VKGB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interface_VKGB.release.xcconfig"; path = "Target Support Files/Pods-Interface_VKGB/Pods-Interface_VKGB.release.xcconfig"; sourceTree = "<group>"; };
+		564652B190C37474CD66683D /* Pods_Interface_VKGB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Interface_VKGB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40881A440127F6BC8AD04F2 /* Pods-Interface_VKGB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interface_VKGB.debug.xcconfig"; path = "Target Support Files/Pods-Interface_VKGB/Pods-Interface_VKGB.debug.xcconfig"; sourceTree = "<group>"; };
 		F41DC2C526024F1F00B85C86 /* AllNavigationVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNavigationVController.swift; sourceTree = "<group>"; };
 		F426645B25C8640B00DFD1E1 /* VKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKView.swift; sourceTree = "<group>"; };
 		F43C9AD025C1D5AC00F22D11 /* AllFriendTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendTVCell.swift; sourceTree = "<group>"; };
@@ -45,6 +50,7 @@
 		F43C9ADA25C31A5A00F22D11 /* AllDroupsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDroupsTVController.swift; sourceTree = "<group>"; };
 		F43C9ADD25C31A7F00F22D11 /* AllGroupsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTVCell.swift; sourceTree = "<group>"; };
 		F43C9AE725C3234600F22D11 /* GroupsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTVController.swift; sourceTree = "<group>"; };
+		F4558210260F68CC00F683DD /* VKRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKRequests.swift; sourceTree = "<group>"; };
 		F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFotoViewController.swift; sourceTree = "<group>"; };
 		F4675C7426060EAC007A4831 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F47F77BA25B0C9ED009DD267 /* Interface_VKGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interface_VKGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,12 +79,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61AFE3175B6743A106486E0E /* Pods_Interface_VKGB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13904B23EDD042633E421CA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E40881A440127F6BC8AD04F2 /* Pods-Interface_VKGB.debug.xcconfig */,
+				0018E6AC02C4375BB2233837 /* Pods-Interface_VKGB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6BCE8B79544AD1663E07FF4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				564652B190C37474CD66683D /* Pods_Interface_VKGB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F426645A25C863C000DFD1E1 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +151,8 @@
 			children = (
 				F47F77BC25B0C9ED009DD267 /* Interface_VKGB */,
 				F47F77BB25B0C9ED009DD267 /* Products */,
+				13904B23EDD042633E421CA6 /* Pods */,
+				6BCE8B79544AD1663E07FF4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +184,7 @@
 				F47F77D625B9D13D009DD267 /* StubDevelopment.storyboard */,
 				F4CE177F25F2DE3C00032C41 /* DateTime.swift */,
 				F41DC2C526024F1F00B85C86 /* AllNavigationVController.swift */,
+				F4558210260F68CC00F683DD /* VKRequests.swift */,
 			);
 			path = Interface_VKGB;
 			sourceTree = "<group>";
@@ -209,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F47F77CE25B0C9F2009DD267 /* Build configuration list for PBXNativeTarget "Interface_VKGB" */;
 			buildPhases = (
+				D6CEA75482CBA891EFBD248A /* [CP] Check Pods Manifest.lock */,
 				F47F77B625B0C9ED009DD267 /* Sources */,
 				F47F77B725B0C9ED009DD267 /* Frameworks */,
 				F47F77B825B0C9ED009DD267 /* Resources */,
+				3A7D3ECE7369850953DF9CA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +297,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A7D3ECE7369850953DF9CA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interface_VKGB/Pods-Interface_VKGB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interface_VKGB/Pods-Interface_VKGB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interface_VKGB/Pods-Interface_VKGB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6CEA75482CBA891EFBD248A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Interface_VKGB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F47F77B625B0C9ED009DD267 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -291,6 +362,7 @@
 				F43C9AD425C1DC6100F22D11 /* AllFriendTVController.swift in Sources */,
 				F4CE177625F2C47D00032C41 /* NewsTVController.swift in Sources */,
 				F4CE177D25F2CEE900032C41 /* News.swift in Sources */,
+				F4558211260F68CC00F683DD /* VKRequests.swift in Sources */,
 				F4602DEB25FD3DF800EAB312 /* AllFotoViewController.swift in Sources */,
 				F4675C7526060EAC007A4831 /* Session.swift in Sources */,
 				F4CE178025F2DE3C00032C41 /* DateTime.swift in Sources */,
@@ -439,6 +511,7 @@
 		};
 		F47F77CF25B0C9F2009DD267 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E40881A440127F6BC8AD04F2 /* Pods-Interface_VKGB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,6 +531,7 @@
 		};
 		F47F77D025B0C9F2009DD267 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0018E6AC02C4375BB2233837 /* Pods-Interface_VKGB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

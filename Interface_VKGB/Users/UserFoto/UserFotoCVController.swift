@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class UserFotoCVController: UICollectionViewController {
     
@@ -15,6 +15,18 @@ class UserFotoCVController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\(String(describing: userF!.userName)) \(String(describing: userF!.userSurname))"
+        request("https://api.vk.com/method/photos.getAll",
+                parameters: [
+                    "access_token" : Session.sharedSession.token,
+                    "owner_id" : Session.sharedSession.userId,
+                    "extended" : "0",
+                    "count" : "10",
+                    "no_service_albums" : "0",
+                    "v" : "5.52"
+                ]).responseJSON {
+                    response in
+                    print(response.value ?? "пусто")
+                }
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int  { 1 }

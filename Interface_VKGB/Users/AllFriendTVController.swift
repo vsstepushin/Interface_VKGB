@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct FriendSection {
     var titleSection: String
@@ -26,6 +27,18 @@ class AllFriendTVController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        request("https://api.vk.com/method/friends.get",
+                parameters: [
+                    "access_token" : Session.sharedSession.token,
+                    "user_id" : Session.sharedSession.userId,
+                    "order" : "name",
+                    "fields" : "nickname, sex, bdate, city",
+                    "v" : "5.52"
+                ]).responseJSON {
+                    response in
+                    print(response.value ?? "пусто")
+                }
         
         let dictionaryFriend = Dictionary.init(grouping: allFriend) {
             $0.userName.prefix(1)
