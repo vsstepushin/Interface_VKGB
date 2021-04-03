@@ -25,9 +25,13 @@ class LoginFormController: UIViewController {
 }
 extension LoginFormController: WKNavigationDelegate{
  
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationResponse: WKNavigationResponse,
+                 decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
             
-            guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment  else {
+            guard let url = navigationResponse.response.url,
+                  url.path == "/blank.html",
+                  let fragment = url.fragment  else {
                 decisionHandler(.allow)
                 return
             }
@@ -44,18 +48,16 @@ extension LoginFormController: WKNavigationDelegate{
             }
         
         guard let token = params["access_token"],
-              let userId = Int(params["user_id"]!)
+              let userId = params["user_id"]
         else {
-            decisionHandler(.cancel)
+            decisionHandler(.allow)
             return
         }
         Session.sharedSession.token = token
         Session.sharedSession.userId = userId
-            print(token)
-            print(userId)
          
-        performSegue(withIdentifier: "VKLogIn", sender: nil)
         decisionHandler(.cancel)
+        performSegue(withIdentifier: "VKLogIn", sender: nil)
         }
         
 }

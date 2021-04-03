@@ -30,6 +30,12 @@
 		F47F77DB25B9DCF7009DD267 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77DA25B9DCF6009DD267 /* User.swift */; };
 		F48FB99E25C570CE0029DAD9 /* UserFotoCVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FB99D25C570CE0029DAD9 /* UserFotoCVController.swift */; };
 		F48FB9A125C570EA0029DAD9 /* UserFotoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48FB9A025C570EA0029DAD9 /* UserFotoCVCell.swift */; };
+		F4C95CF22618F09A002FB378 /* VKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C95CF12618F09A002FB378 /* VKUser.swift */; };
+		F4C95CF52618F6ED002FB378 /* VKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C95CF42618F6ED002FB378 /* VKPhoto.swift */; };
+		F4C95CF82618F714002FB378 /* VKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C95CF72618F714002FB378 /* VKGroup.swift */; };
+		F4C95CFC2618FC0E002FB378 /* VKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C95CFB2618FC0E002FB378 /* VKService.swift */; };
+		F4C95CFF2618FE1B002FB378 /* VKAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C95CFE2618FE1B002FB378 /* VKAPIError.swift */; };
+		F4C95D02261906CA002FB378 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C95D01261906CA002FB378 /* SectionHeaderView.swift */; };
 		F4CE177625F2C47D00032C41 /* NewsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177525F2C47D00032C41 /* NewsTVController.swift */; };
 		F4CE177A25F2C4BC00032C41 /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177925F2C4BC00032C41 /* NewsTVCell.swift */; };
 		F4CE177D25F2CEE900032C41 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177C25F2CEE900032C41 /* News.swift */; };
@@ -66,6 +72,12 @@
 		F47F77DA25B9DCF6009DD267 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F48FB99D25C570CE0029DAD9 /* UserFotoCVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFotoCVController.swift; sourceTree = "<group>"; };
 		F48FB9A025C570EA0029DAD9 /* UserFotoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFotoCVCell.swift; sourceTree = "<group>"; };
+		F4C95CF12618F09A002FB378 /* VKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUser.swift; sourceTree = "<group>"; };
+		F4C95CF42618F6ED002FB378 /* VKPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPhoto.swift; sourceTree = "<group>"; };
+		F4C95CF72618F714002FB378 /* VKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroup.swift; sourceTree = "<group>"; };
+		F4C95CFB2618FC0E002FB378 /* VKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKService.swift; sourceTree = "<group>"; };
+		F4C95CFE2618FE1B002FB378 /* VKAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKAPIError.swift; sourceTree = "<group>"; };
+		F4C95D01261906CA002FB378 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		F4CE177525F2C47D00032C41 /* NewsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVController.swift; sourceTree = "<group>"; };
 		F4CE177925F2C4BC00032C41 /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
 		F4CE177C25F2CEE900032C41 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -142,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				F4675C7426060EAC007A4831 /* Session.swift */,
+				F4C95CF12618F09A002FB378 /* VKUser.swift */,
+				F4C95CF42618F6ED002FB378 /* VKPhoto.swift */,
+				F4C95CF72618F714002FB378 /* VKGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +182,7 @@
 		F47F77BC25B0C9ED009DD267 /* Interface_VKGB */ = {
 			isa = PBXGroup;
 			children = (
+				F4C95CFA2618FBF9002FB378 /* Service */,
 				F4675C7326060E82007A4831 /* Models */,
 				F4CE178325F7EF3700032C41 /* Animation */,
 				F4CE177425F2C44700032C41 /* News */,
@@ -185,6 +201,7 @@
 				F4CE177F25F2DE3C00032C41 /* DateTime.swift */,
 				F41DC2C526024F1F00B85C86 /* AllNavigationVController.swift */,
 				F4558210260F68CC00F683DD /* VKRequests.swift */,
+				F4C95D01261906CA002FB378 /* SectionHeaderView.swift */,
 			);
 			path = Interface_VKGB;
 			sourceTree = "<group>";
@@ -208,6 +225,15 @@
 				F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */,
 			);
 			path = UserFoto;
+			sourceTree = "<group>";
+		};
+		F4C95CFA2618FBF9002FB378 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4C95CFB2618FC0E002FB378 /* VKService.swift */,
+				F4C95CFE2618FE1B002FB378 /* VKAPIError.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		F4CE177425F2C44700032C41 /* News */ = {
@@ -351,10 +377,15 @@
 				F47F77C225B0C9ED009DD267 /* ViewController.swift in Sources */,
 				F43C9AE825C3234600F22D11 /* GroupsTVController.swift in Sources */,
 				F43C9ADE25C31A7F00F22D11 /* AllGroupsTVCell.swift in Sources */,
+				F4C95D02261906CA002FB378 /* SectionHeaderView.swift in Sources */,
+				F4C95CF82618F714002FB378 /* VKGroup.swift in Sources */,
 				F4CE178525F7EF9000032C41 /* IndicatorLoadingView.swift in Sources */,
 				F47F77D325B731AC009DD267 /* LoginFormController.swift in Sources */,
+				F4C95CF52618F6ED002FB378 /* VKPhoto.swift in Sources */,
 				F47F77BE25B0C9ED009DD267 /* AppDelegate.swift in Sources */,
+				F4C95CFC2618FC0E002FB378 /* VKService.swift in Sources */,
 				F43C9AD125C1D5AC00F22D11 /* AllFriendTVCell.swift in Sources */,
+				F4C95CF22618F09A002FB378 /* VKUser.swift in Sources */,
 				F48FB9A125C570EA0029DAD9 /* UserFotoCVCell.swift in Sources */,
 				F47F77DB25B9DCF7009DD267 /* User.swift in Sources */,
 				F47F77C025B0C9ED009DD267 /* SceneDelegate.swift in Sources */,
@@ -365,6 +396,7 @@
 				F4558211260F68CC00F683DD /* VKRequests.swift in Sources */,
 				F4602DEB25FD3DF800EAB312 /* AllFotoViewController.swift in Sources */,
 				F4675C7526060EAC007A4831 /* Session.swift in Sources */,
+				F4C95CFF2618FE1B002FB378 /* VKAPIError.swift in Sources */,
 				F4CE178025F2DE3C00032C41 /* DateTime.swift in Sources */,
 				F4CE178825F7FAB400032C41 /* AllAnimations.swift in Sources */,
 				F43C9AD825C315FE00F22D11 /* Groups.swift in Sources */,

@@ -7,18 +7,34 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
-struct FriendSection {
-    var titleSection: String
-    var itemsSection: [UserProfile]
-}
+//struct FriendSection {
+//    var titleSection: String
+//    var itemsSection: [UserProfile]
+//}
 
-class AllFriendTVController: UITableViewController, UISearchBarDelegate {
+class AllFriendTVController: UITableViewController {
+   
+    
     
     @IBOutlet weak var searchBarFriend: UISearchBar!
     
-    var filterFriend = [UserProfile]()
-    var sectionFriend = [FriendSection]()
+    var filterFriend = [VKUser]() {
+        didSet {
+                    tableView.reloadData()
+        }
+    }
+    private var users = [VKUser]()
+    
+    private var userGroups = [String: [VKUser]]() {
+        didSet {
+            users = userGroups.flatMap { $0.value }.sorted { $0.lastName < $1.lastName }
+            tableView.reloadData()
+        }
+    }
+    
+    var sectionFriend = [String]()
     var searchingFriend = false
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,107 +43,114 @@ class AllFriendTVController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        request("https://api.vk.com/method/friends.get",
-                parameters: [
-                    "access_token" : Session.sharedSession.token,
-                    "user_id" : Session.sharedSession.userId,
-                    "order" : "name",
-                    "fields" : "nickname, sex, bdate, city",
-                    "v" : "5.52"
-                ]).responseJSON {
-                    response in
-                    print(response.value ?? "пусто")
-                }
-        
-        let dictionaryFriend = Dictionary.init(grouping: allFriend) {
-            $0.userName.prefix(1)
-        }
-        sectionFriend = dictionaryFriend.map {
-            FriendSection(titleSection: String($0.key), itemsSection: $0.value)
-        }
-        sectionFriend.sort {$0.titleSection < $1.titleSection}
+        requestData()
+        tableView.tableFooterView = UIView()
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        if searchingFriend {
-            return 1
-        } else {
-            return sectionFriend.count
+    private func requestData() {
+             VKService.instance.loadFriends { result in
+                 switch result {
+                 case .success(let users):
+                     self.users = users
+                     self.configureUserGroups(with: users)
+                     self.tableView.reloadData()
+                 case .failure(let error):
+                     print(error)
+                 }
+             }
+         }
+    private func configureUserGroups(with users: [VKUser]) {
+        for user in users {
+            let userKey = String(user.lastName.prefix(1))
+            if var userGroup = userGroups[userKey] {
+                userGroup.append(user)
+                userGroups[userKey] = userGroup
+            } else {
+                userGroups[userKey] = [user]
+            }
         }
+        sectionFriend = [String](userGroups.keys)
+        sectionFriend = sectionFriend.sorted { $0 < $1 }
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return filterFriend.isEmpty ? sectionFriend.count : 1
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        sectionFriend.map {$0.titleSection}
+        return filterFriend.isEmpty ? sectionFriend : nil
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchingFriend {
-            return filterFriend.count
-        } else {
-            return sectionFriend[section].itemsSection.count
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserFCell", for: indexPath)
-                as! AllFriendTVCell
-        let friendUser = allFriend[indexPath.row]
-        cell.userName.text = "\(friendUser.userName) \(friendUser.userSurname)"
-        cell.userName.adjustsFontSizeToFitWidth = true
-        cell.userName.minimumScaleFactor = CGFloat(10)
-        cell.userAvatar.image = friendUser.userAvatar
-        
-        if searchingFriend {
-            cell.userName.text = "\(filterFriend[indexPath.row].userName) \(filterFriend[indexPath.row].userSurname)"
-            cell.userAvatar.image = filterFriend[indexPath.row].userAvatar
-        } else {
-            cell.userName.text = "\(sectionFriend[indexPath.section].itemsSection[indexPath.row].userName) \(sectionFriend[indexPath.section].itemsSection[indexPath.row].userSurname)"
-            cell.userAvatar.image = sectionFriend[indexPath.section].itemsSection[indexPath.row].userAvatar
-        }
-        
-        return cell
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return filterFriend.isEmpty ? sectionFriend[section] : nil
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if filterFriend.isEmpty {
+            let sectionTitle = sectionFriend[section]
+            return SectionHeaderView(sectionTitle: sectionTitle)
+        } else {
+            return nil
+        }
+    }
     
-        let headerVievFriend = UIView()
-        let lableFriend = UILabel()
-        headerVievFriend.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        lableFriend.text = sectionFriend[section].titleSection
-        lableFriend.textColor = UIColor.black
-        lableFriend.font = UIFont.systemFont(ofSize: 17, weight: UIFont.Weight.thin)
-        headerVievFriend.addSubview(lableFriend)
-        lableFriend.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            lableFriend.centerYAnchor.constraint(equalTo: headerVievFriend.centerYAnchor),
-            lableFriend.leadingAnchor.constraint(equalTo: headerVievFriend.leadingAnchor, constant: 16),
-            lableFriend.trailingAnchor.constraint(equalTo: headerVievFriend.trailingAnchor, constant: -16)])
-        return headerVievFriend
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if filterFriend.isEmpty {
+            let sectionTitle = sectionFriend[section]
+            return userGroups[sectionTitle]?.count ?? 0
+        } else {
+            return filterFriend.count
+        }
+    }
+
         
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showUserPhoto" {
-            let albumUser = segue.destination as? UserFotoCVController
-            if let indexPath = tableView.indexPathForSelectedRow {
-                if searchingFriend {
-                    albumUser?.userF = filterFriend[indexPath.row]
-                } else {
-                    albumUser?.userF = sectionFriend[indexPath.section].itemsSection[indexPath.row]
-                }
-            }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserFCell", for: indexPath)
+                as! AllFriendTVCell
+        var user: VKUser? = nil
+        if filterFriend.isEmpty {
+            let sectionTitle = sectionFriend[indexPath.section]
+            user = userGroups[sectionTitle]?[indexPath.row]
+        } else {
+            user = filterFriend[indexPath.row]
         }
+        let avatarUrl = URL(string: user!.avatarUrl)!
+        cell.userName.text = String(format: "%@ %@", user!.firstName, user!.lastName)
+        cell.userAvatar.af.setImage(withURL: avatarUrl)
+        cell.userAvatar.setNeedsDisplay()
+        return cell
     }
+}
+
+extension AllFriendTVController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterFriend = allFriend.filter({$0.userName.lowercased().prefix(searchText.count) == searchText.lowercased()})
-            searchingFriend = true
-            tableView.reloadData()
+        guard let searchText = searchBar.text, !searchText.isEmpty else {
+            clearSearch(searchBar)
+            return
         }
-
-        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            searchingFriend = false
-            searchBar.text = ""
-            tableView.reloadData()
-        }
+        filterFriend = users.filter { $0.lastName.lowercased().contains(searchText.lowercased()) ||
+            $0.firstName.lowercased().contains(searchText.lowercased()) }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearSearch(searchBar)
+    }
+    
+    private func clearSearch(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        view.endEditing(true)
+        filterFriend = [VKUser]()
+    }
 }
