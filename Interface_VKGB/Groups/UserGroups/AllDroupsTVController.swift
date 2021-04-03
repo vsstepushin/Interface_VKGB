@@ -6,11 +6,23 @@
 //
 
 import UIKit
+import Alamofire
 
 class AllDroupsTVController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        request("https://api.vk.com/method/groups.get",
+                parameters: [
+                    "access_token" : Session.sharedSession.token,
+                    "user_id" : Session.sharedSession.userId,
+                    "extended" : "1",
+                    "fields" : "city, description, members_count",
+                    "v" : "5.52"
+                ]).responseJSON {
+                    response in
+                    print(response.value ?? "пусто")
+                }
     }
 
 
