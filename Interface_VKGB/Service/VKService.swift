@@ -38,6 +38,7 @@ class VKService {
                 do {
                     let requestResponse = try decoder.decode(VKUserRequestResponse.self,
                                                              from: data)
+                    RealmService.instance.saveObjects(requestResponse.response.items)
                     handler(.success(requestResponse.response.items))
                 } catch {
                     handler(.failure(error))
@@ -57,7 +58,7 @@ class VKService {
             "photo_sizes": "0",
             "count": "30"
         ]
-        requestParameters["v"] = "5.00"
+        requestParameters["v"] = "5.21"
         
         AF.request(apiEndpoint,
                    method: .get,
@@ -99,9 +100,10 @@ class VKService {
                 }
                 let decoder = JSONDecoder()
                 do {
-                    let requestResonse = try
+                    let requestResponse = try
                         decoder.decode(VKGroupRequestResponse.self, from: data)
-                    handler(.success(requestResonse.response.items))
+                    RealmService.instance.saveObjects(requestResponse.response.items)
+                    handler(.success(requestResponse.response.items))
                 } catch {
                     handler(.failure(error))
                 }

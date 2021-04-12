@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import RealmSwift
 
 //struct FriendSection {
 //    var titleSection: String
@@ -119,6 +120,24 @@ class AllFriendTVController: UITableViewController {
         cell.userAvatar.af.setImage(withURL: avatarUrl)
         cell.userAvatar.setNeedsDisplay()
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhotos" {
+            guard let viewController = segue.destination as? UserFotoCVController,
+                let selectedIndexPath = tableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            var user: VKUser? = nil
+            if filterFriend.isEmpty {
+                let sectionTitle = sectionFriend[selectedIndexPath.section]
+                user = userGroups[sectionTitle]?[selectedIndexPath.row]
+            } else {
+                user = filterFriend[selectedIndexPath.row]
+            }
+            viewController.userId = user!.userId
+        }
     }
 }
 
