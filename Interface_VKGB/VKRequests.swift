@@ -21,7 +21,7 @@ class VKRequests {
                     URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
                     URLQueryItem(name: "scope", value: "262150"),
                     URLQueryItem(name: "response_type", value: "token"),
-                    URLQueryItem(name: "v", value: "5.52")
+                    URLQueryItem(name: "v", value: "5.103")
                 ]
                 
                 let request = URLRequest(url: urlComponents.url!)

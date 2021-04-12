@@ -1,20 +1,21 @@
 PODS:
-  - Alamofire (4.9.1)
-  - VK-ios-sdk (1.6.2)
+  - Alamofire (5.4.1)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.8)
-  - VK-ios-sdk
+  - Alamofire (~> 5.1)
+  - AlamofireImage (~> 4.1)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - VK-ios-sdk
+    - AlamofireImage
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  VK-ios-sdk: 5bcf00a2014a7323f98db9328b603d4f96635caa
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
 
-PODFILE CHECKSUM: a0f6e1f0b0606024e1401f53b90af4bb90e687d4
+PODFILE CHECKSUM: 123ef8e61d4f969c8d8398e9ce7bf8d32c95d902
 
 COCOAPODS: 1.10.1
