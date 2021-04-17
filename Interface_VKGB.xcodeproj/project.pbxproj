@@ -42,6 +42,7 @@
 		F4CE178025F2DE3C00032C41 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE177F25F2DE3C00032C41 /* DateTime.swift */; };
 		F4CE178525F7EF9000032C41 /* IndicatorLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE178425F7EF9000032C41 /* IndicatorLoadingView.swift */; };
 		F4CE178825F7FAB400032C41 /* AllAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE178725F7FAB400032C41 /* AllAnimations.swift */; };
+		F4FA596C2624B46D00C76A76 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FA596B2624B46D00C76A76 /* RealmService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		F4CE177F25F2DE3C00032C41 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
 		F4CE178425F7EF9000032C41 /* IndicatorLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLoadingView.swift; sourceTree = "<group>"; };
 		F4CE178725F7FAB400032C41 /* AllAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAnimations.swift; sourceTree = "<group>"; };
+		F4FA596B2624B46D00C76A76 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			children = (
 				F4C95CFB2618FC0E002FB378 /* VKService.swift */,
 				F4C95CFE2618FE1B002FB378 /* VKAPIError.swift */,
+				F4FA596B2624B46D00C76A76 /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				F4C95D02261906CA002FB378 /* SectionHeaderView.swift in Sources */,
 				F4C95CF82618F714002FB378 /* VKGroup.swift in Sources */,
 				F4CE178525F7EF9000032C41 /* IndicatorLoadingView.swift in Sources */,
+				F4FA596C2624B46D00C76A76 /* RealmService.swift in Sources */,
 				F47F77D325B731AC009DD267 /* LoginFormController.swift in Sources */,
 				F4C95CF52618F6ED002FB378 /* VKPhoto.swift in Sources */,
 				F47F77BE25B0C9ED009DD267 /* AppDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class UserFotoCVController: UICollectionViewController {
     
@@ -38,7 +39,7 @@ class UserFotoCVController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "showUserPhoto", for: indexPath) as! UserFotoCVCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserFotoCVCell", for: indexPath) as! UserFotoCVCell
         let photo = photos[indexPath.row]
         let photoUrl = URL(string: photo.url)!
         cell.userFoto.af.setImage(withURL: photoUrl)

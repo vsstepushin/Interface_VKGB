@@ -249,7 +249,7 @@
                                     <outlet property="shadowView" destination="PEh-cx-Hcp" id="cLn-OY-GrX"/>
                                     <outlet property="userAvatar" destination="vuR-P9-yDd" id="me1-k8-llY"/>
                                     <outlet property="userName" destination="szF-nU-B2D" id="ikC-8f-ueB"/>
-                                    <segue destination="rP1-Z5-aPm" kind="show" identifier="showUserPhoto" id="Y1y-2m-0Xe"/>
+                                    <segue destination="rP1-Z5-aPm" kind="show" identifier="showPhotos" id="5Jv-dI-yuD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -478,7 +478,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserFoto" id="013-hZ-VN6" customClass="UserFotoCVCell" customModule="Interface_VKGB" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserFotoCVCell" id="013-hZ-VN6" customClass="UserFotoCVCell" customModule="Interface_VKGB" customModuleProvider="target">
                                 <rect key="frame" x="47" y="0.0" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HJF-5y-fdI">

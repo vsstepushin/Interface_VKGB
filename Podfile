@@ -7,5 +7,6 @@ target 'Interface_VKGB' do
   # Pods for Interface_VKGB
 pod 'Alamofire', '~> 5.1'
 pod 'AlamofireImage', '~> 4.1'
+pod 'RealmSwift'
 
 end

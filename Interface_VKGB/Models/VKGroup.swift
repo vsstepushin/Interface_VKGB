@@ -6,26 +6,25 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct VKGroupRequestResponse: Codable {
      let response: VKGroupResponse
  }
 
- struct VKGroupResponse: Codable {
+struct VKGroupResponse: Codable {
      let items: [VKGroup]
  }
 
- struct VKGroup: Codable {
-     var groupId: Int
-     var groupName: String
-     var avatarUrl: String
- }
-
- extension VKGroup: CustomStringConvertible {
-     var description: String {
+class VKGroup: Object, Codable {
+     override var description: String {
          return String(format: "%@ (%ld)", groupName, groupId)
      }
- }
+
+    @objc dynamic var groupId: Int
+    @objc dynamic var groupName: String
+    @objc dynamic var avatarUrl: String
+}
 
  extension VKGroup {
      enum CodingKeys: String, CodingKey {
