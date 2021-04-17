@@ -50,14 +50,21 @@ class AllFriendTVController: UITableViewController {
     private func requestData() {
              VKService.instance.loadFriends { result in
                  switch result {
-                 case .success(let users):
-                     self.users = users
-                     self.configureUserGroups(with: users)
-                     self.tableView.reloadData()
+                 case .success:
+                    self.fetchCachedData()
                  case .failure(let error):
-                     print(error)
+                    self.fetchCachedData()
+                    print(error)
                  }
              }
+         }
+    private func fetchCachedData() {
+             guard let users = RealmService.instance.fetchObjects(VKUser.self) else {
+                 return
+             }
+             self.users = users
+             self.configureUserGroups(with: users)
+             self.tableView.reloadData()
          }
     private func configureUserGroups(with users: [VKUser]) {
         for user in users {
