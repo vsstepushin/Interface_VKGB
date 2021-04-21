@@ -29,14 +29,22 @@ class AllDroupsTVController: UITableViewController {
     private func requestData() {
         VKService.instance.loadGroups { result in
             switch result {
-            case .success(let groups):
-                self.groups = groups
-                self.tableView.reloadData()
+            case .success:
+                self.fetchCachedData()
             case .failure(let error):
+                self.fetchCachedData()
                 print(error)
             }
         }
     }
+    
+    private func fetchCachedData() {
+            guard let groups = RealmService.instance.fetchObjects(VKGroup.self) else {
+                return
+            }
+            self.groups = groups
+            self.tableView.reloadData()
+        }
 
 
     @IBAction func addGroups (segue: UIStoryboardSegue) {
