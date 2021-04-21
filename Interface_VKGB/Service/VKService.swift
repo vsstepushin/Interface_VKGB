@@ -38,6 +38,7 @@ class VKService {
                 do {
                     let requestResponse = try decoder.decode(VKUserRequestResponse.self,
                                                              from: data)
+                    RealmService.instance.deleteObjects(VKUser.self)
                     RealmService.instance.saveObjects(requestResponse.response.items)
                     handler(.success(requestResponse.response.items))
                 } catch {
@@ -102,6 +103,7 @@ class VKService {
                 do {
                     let requestResponse = try
                         decoder.decode(VKGroupRequestResponse.self, from: data)
+                    RealmService.instance.deleteObjects(VKUser.self)
                     RealmService.instance.saveObjects(requestResponse.response.items)
                     handler(.success(requestResponse.response.items))
                 } catch {
