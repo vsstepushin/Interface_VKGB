@@ -14,4 +14,12 @@ class Session {
     private init() { }
     
     static let sharedSession = Session()
+    
+    
+    func toDictionary() -> [String: Any] {
+        return [
+            "accessToken": token,
+            "userId": userId
+        ]
+    }
 }

@@ -45,6 +45,8 @@ class AllFriendTVController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseService.instance.setValue("vksession",
+                                          Session.sharedSession.toDictionary())
         requestData()
         tableView.tableFooterView = UIView()
     }

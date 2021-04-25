@@ -17,6 +17,8 @@
 		F43C9ADE25C31A7F00F22D11 /* AllGroupsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9ADD25C31A7F00F22D11 /* AllGroupsTVCell.swift */; };
 		F43C9AE825C3234600F22D11 /* GroupsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43C9AE725C3234600F22D11 /* GroupsTVController.swift */; };
 		F4558211260F68CC00F683DD /* VKRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4558210260F68CC00F683DD /* VKRequests.swift */; };
+		F455925426355177001522A0 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F455925326355177001522A0 /* FirebaseService.swift */; };
+		F455925726355714001522A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F455925626355714001522A0 /* GoogleService-Info.plist */; };
 		F4602DEB25FD3DF800EAB312 /* AllFotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */; };
 		F4675C7526060EAC007A4831 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4675C7426060EAC007A4831 /* Session.swift */; };
 		F47F77BE25B0C9ED009DD267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47F77BD25B0C9ED009DD267 /* AppDelegate.swift */; };
@@ -58,6 +60,8 @@
 		F43C9ADD25C31A7F00F22D11 /* AllGroupsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTVCell.swift; sourceTree = "<group>"; };
 		F43C9AE725C3234600F22D11 /* GroupsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTVController.swift; sourceTree = "<group>"; };
 		F4558210260F68CC00F683DD /* VKRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKRequests.swift; sourceTree = "<group>"; };
+		F455925326355177001522A0 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		F455925626355714001522A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4602DEA25FD3DF800EAB312 /* AllFotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFotoViewController.swift; sourceTree = "<group>"; };
 		F4675C7426060EAC007A4831 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F47F77BA25B0C9ED009DD267 /* Interface_VKGB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interface_VKGB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,7 @@
 				F47F77BD25B0C9ED009DD267 /* AppDelegate.swift */,
 				F47F77BF25B0C9ED009DD267 /* SceneDelegate.swift */,
 				F47F77C125B0C9ED009DD267 /* ViewController.swift */,
+				F455925626355714001522A0 /* GoogleService-Info.plist */,
 				F47F77C325B0C9ED009DD267 /* Main.storyboard */,
 				F47F77C625B0C9F2009DD267 /* Assets.xcassets */,
 				F47F77C825B0C9F2009DD267 /* LaunchScreen.storyboard */,
@@ -235,6 +240,7 @@
 				F4C95CFB2618FC0E002FB378 /* VKService.swift */,
 				F4C95CFE2618FE1B002FB378 /* VKAPIError.swift */,
 				F4FA596B2624B46D00C76A76 /* RealmService.swift */,
+				F455925326355177001522A0 /* FirebaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			files = (
 				F47F77CA25B0C9F2009DD267 /* LaunchScreen.storyboard in Resources */,
 				F47F77C725B0C9F2009DD267 /* Assets.xcassets in Resources */,
+				F455925726355714001522A0 /* GoogleService-Info.plist in Resources */,
 				F47F77D725B9D13E009DD267 /* StubDevelopment.storyboard in Resources */,
 				F47F77C525B0C9ED009DD267 /* Main.storyboard in Resources */,
 			);
@@ -375,6 +382,7 @@
 			files = (
 				F48FB99E25C570CE0029DAD9 /* UserFotoCVController.swift in Sources */,
 				F426645C25C8640B00DFD1E1 /* VKView.swift in Sources */,
+				F455925426355177001522A0 /* FirebaseService.swift in Sources */,
 				F41DC2C626024F1F00B85C86 /* AllNavigationVController.swift in Sources */,
 				F4CE177A25F2C4BC00032C41 /* NewsTVCell.swift in Sources */,
 				F47F77C225B0C9ED009DD267 /* ViewController.swift in Sources */,

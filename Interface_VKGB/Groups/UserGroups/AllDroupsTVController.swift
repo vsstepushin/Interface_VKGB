@@ -47,6 +47,9 @@ class AllDroupsTVController: UITableViewController {
             }
             self.groups = groups
             self.configurRealmNotifications()
+            let groupNames = groups.map { $0.groupName }
+                FirebaseService.instance.setValue("groups",
+                                                  ["userGroups": groupNames] )
         }
 
     
