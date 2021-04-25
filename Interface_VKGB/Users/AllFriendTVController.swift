@@ -37,6 +37,7 @@ class AllFriendTVController: UITableViewController {
     
     var sectionFriend = [String]()
     var searchingFriend = false
+    private var token: NotificationToken?
     
     override func viewWillAppear(_ animated: Bool) {
         tableAnimate()
@@ -64,8 +65,33 @@ class AllFriendTVController: UITableViewController {
              }
              self.users = users
              self.configureUserGroups(with: users)
-             self.tableView.reloadData()
+             self.configurRealmNotifications()
          }
+    
+    private func configurRealmNotifications() {
+        guard let realm = try? Realm() else { return }
+        token = realm.objects(VKUser.self).observe({ [weak self] changes in
+            switch changes {
+            case .initial:
+                self?.tableView.reloadData()
+            case .update(_,
+                         deletions: let deletions,
+                         insertions: let insertions,
+                         modifications: let modifications):
+                self?.tableView.beginUpdates()
+                self?.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                self?.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}),
+                                     with: .automatic)
+                self?.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }),
+                                     with: .automatic)
+                self?.tableView.endUpdates()
+            case .error(let error):
+                fatalError(error.localizedDescription)
+            }
+        })
+    }
+    
     private func configureUserGroups(with users: [VKUser]) {
         for user in users {
             let userKey = String(user.lastName.prefix(1))
